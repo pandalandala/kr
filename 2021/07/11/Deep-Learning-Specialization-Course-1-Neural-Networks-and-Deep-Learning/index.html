@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/img/202206052009945.png">
 <meta property="article:published_time" content="2021-07-11T12:15:22.000Z">
-<meta property="article:modified_time" content="2022-06-05T15:47:33.142Z">
+<meta property="article:modified_time" content="2022-06-05T15:53:28.608Z">
 <meta property="article:author" content="zxr">
 <meta property="article:tag" content="DeepLearning">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-06-05 23:47:33'
+  postUpdate: '2022-06-05 23:53:28'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -190,7 +190,7 @@
 <p>损失函数是在单个训练样本中定义的，它衡量的是算法在单个训练样本中表现如何，为了衡量算法在全部训练样本上的表现如何，我们需要定义一个==<strong>算法的损失函数</strong>==，算法的损失函数是对$m$个样本的损失函数求和然后除以$m$，如下图所示。</p>
 <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="C:\Users\zxr\AppData\Roaming\Typora\typora-user-images\image-20210814211652210.png" alt="image-20210814211652210" style="zoom:80%;">
 
-<p>损失函数只适用于像这样的单个训练样本，而代价函数是参数的总损失，所以在训练逻辑回归模型时候，我们需要找到合适的$w$和$b$，来让代价函数$J$的总损失降到最低。</p>
+<p>损失函数只适用于像这样的单个训练样本，而代价函数是参数的总损失，所以在训练逻辑回归模型时候，我们需要找到合适的 $w$ 和$b$，来让代价函数$J$的总损失降到最低。</p>
 <h4 id="2-4-梯度下降（Gradient-Descent）"><a href="#2-4-梯度下降（Gradient-Descent）" class="headerlink" title="2.4 梯度下降（Gradient Descent）"></a>2.4 梯度下降（Gradient Descent）</h4><ul>
 <li><p><strong>初始化</strong>：在梯度下降法中，可以用如图那个小红点来初始化参数$w$和$b$，也可以采用随机初始化的方法，对于逻辑回归几乎所有的初始化方法都有效，因为函数是凸函数，无论在哪里初始化，应该达到同一点或大致相同的点。</p>
 </li>
