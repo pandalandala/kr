@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/img/202206052021019.png">
 <meta property="article:published_time" content="2021-07-24T12:19:04.000Z">
-<meta property="article:modified_time" content="2022-06-05T12:55:36.902Z">
+<meta property="article:modified_time" content="2022-06-05T13:25:00.701Z">
 <meta property="article:author" content="zxr">
 <meta property="article:tag" content="DeepLearning">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-06-05 20:55:36'
+  postUpdate: '2022-06-05 21:25:00'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -171,11 +171,11 @@
 <h4 id="1-2-偏差，方差（Bias-x2F-Variance）"><a href="#1-2-偏差，方差（Bias-x2F-Variance）" class="headerlink" title="1.2 偏差，方差（Bias /Variance）"></a>1.2 偏差，方差（Bias /Variance）</h4><p>假设这就是数据集，如果给这个数据集拟合一条直线，可能得到一个逻辑回归拟合，但它并不能很好地拟合该数据，这是<strong>高偏差（high bias）</strong>的情况，我们称为<strong>欠拟合（underfitting）</strong>。</p>
 <p>相反的如果我们拟合一个非常复杂的分类器，比如深度神经网络或含有隐藏单元的神经网络，可能就非常适用于这个数据集，但是这看起来也不是一种很好的拟合方式。这时分类器为<strong>高方差（high variance）</strong>，数据<strong>过度拟合（overfitting）</strong>。</p>
 <p>在两者之间，可能还有一些像图中这样的，复杂程度适中，数据拟合适度的分类器，这个数据拟合看起来更加合理，我们称之为<strong>适度拟合（just right）</strong>，是介于过度拟合和欠拟合中间的一类。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdn.net/20170928161736059?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvS29hbGFfVHJlZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="还在路上，稍等..." style="zoom: 45%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052121482.png" alt="image-20220605212145397" style="zoom: 80%;">
 
 <hr>
 <p>下面给出几种拟合示例。我们沿用猫咪图片分类这个例子，左边一张是猫咪图片，右边一张不是。理解偏差和方差的两个关键数据是<strong>训练集误差（Train set error）</strong>和<strong>验证集误差（Dev set error）</strong>，为了方便论证，假设我们可以辨别图片中的小猫，我们用肉眼识别几乎是不会出错的。通过查看训练集误差和验证集误差，我们便可以诊断算法是否具有高方差。也就是说衡量训练集和验证集误差就可以得出不同结论。所有的示例图如下。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="C:\Users\郑旭然\AppData\Roaming\Typora\typora-user-images\image-20210822225821331.png" alt="image-20210822225821331" style="zoom: 80%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052123084.png" alt="image-20220605212316013" style="zoom:80%;">
 
 <ul>
 <li><p><strong>低偏差、高方差：</strong>假定训练集误差是1%，为了方便论证，假定验证集误差是11%，可以看出训练集设置得非常好，而验证集设置相对较差，我们可能过度拟合了训练集，在某种程度上，验证集并没有充分利用交叉验证集的作用，像这种情况，我们称之为“高方差”。</p>
@@ -190,7 +190,7 @@
 <p>这些分析都是基于假设预测的，假设人眼辨别的错误率接近0%，一般来说，<strong>最优误差也被称为贝叶斯误差</strong>，所以，最优误差接近0%。如果最优误差或贝叶斯误差非常高，比如15%，那么15%的错误率对训练集来说也是非常合理的，偏差不高，方差也非常低。</p>
 <hr>
 <p>最后，我们补充性地给出偏差和方差都很高的数据集示例：它会过度拟合部分数据，用紫色线画出的分类器具有高偏差和高方差，偏差高是因为它几乎是一条线性分类器，并未拟合数据，而采用曲线函数或二次元函数会产生高方差，因为它曲线灵活性太高以致拟合了这两个错误样本和中间这些活跃数据。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="C:\Users\郑旭然\AppData\Roaming\Typora\typora-user-images\image-20210823194020428.png" alt="image-20210823194020428" style="zoom: 50%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052123236.png" alt="image-20220605212333199" style="zoom:80%;">
 
 <h4 id="1-3-机器学习基础（Basic-Recipe-for-Machine-Learning）"><a href="#1-3-机器学习基础（Basic-Recipe-for-Machine-Learning）" class="headerlink" title="1.3 机器学习基础（Basic Recipe for Machine Learning）"></a>1.3 机器学习基础（Basic Recipe for Machine Learning）</h4><p>在训练机器学习模型的过程中，可能需要解决高偏差或高方差的情况：</p>
 <ul>
@@ -221,13 +221,13 @@
 <h5 id="神经网络中的正则化代价函数"><a href="#神经网络中的正则化代价函数" class="headerlink" title="神经网络中的正则化代价函数"></a>神经网络中的正则化代价函数</h5><p>在神经网络中，加入正则化项的代价函数为：<br>$$<br>J(w^{[1]},b^{[1]},…,w^{[L]},b^{[L]})=\dfrac{1}{m}\sum ^{m}<em>{i=1}l(\widehat{y}^{(i)},y^{(i)})+\dfrac{\lambda}{2m}\sum ^{L}</em>{l=1}||w^{[l]}||<em>F^2<br>$$<br>其中$||w^{[l]}||<em>F^2=\sum ^{n^{[l-1]}}</em>{i=1}\sum ^{n^{[l]}}</em>{j=1}(w_{ij}^{[l]})^2$，因为$w$的大小为$(n^{[l-1]},n^{[l]})$，该矩阵范数被称为==<strong>Frobenius范数</strong>==。</p>
 <h5 id="权重衰减"><a href="#权重衰减" class="headerlink" title="权重衰减"></a>权重衰减</h5><p>在加入正则化项后，梯度变为：<br>$$<br>dW^{[l]}=(form_backprop)+\dfrac{\lambda}{m}W^{[l]}<br>$$<br>用backprop计算出$dW$的值，backprop会给出$J$对$W$的偏导数，实际上是$W^{[l]}$，把$W^{[l]}$替换为$W^{[l]}$减去学习率乘以$dW$。则梯度更新公式变为：<br>$$<br>W^{[l]}:=W^{[l]}-\alpha dW^{[l]}<br>$$<br>代入可得：<br>$$<br>W^{[l]}:=W^{[l]}-\alpha [(form_backprop)+\dfrac{\lambda}{m}W^{[l]}]\<br>=W^{[l]}-\alpha (form_backprop)-\alpha\dfrac{\lambda}{m}W^{[l]}\<br>=(1-\dfrac{\alpha\lambda}{m})W^{[l]}-\alpha (form_backprop)<br>$$<br>其中$(1-\dfrac{\alpha\lambda}{m})$为一个小于1的项，会给原来的$W^{[l]}$一个衰减的参数，所以L2范数正则化也被称为<strong>权重衰减（Weight decay）</strong>。</p>
 <h4 id="1-5-为什么正则化可以减少过拟合呢？（Why-regularization-reduces-overfitting-）"><a href="#1-5-为什么正则化可以减少过拟合呢？（Why-regularization-reduces-overfitting-）" class="headerlink" title="1.5 为什么正则化可以减少过拟合呢？（Why regularization reduces overfitting?）"></a>1.5 为什么正则化可以减少过拟合呢？（Why regularization reduces overfitting?）</h4><p>假设下图的神经网络结构属于过拟合状态：</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdn.net/20170928204412452?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvS29hbGFfVHJlZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="还在路上，稍等..." style="zoom: 40%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052124907.png" alt="image-20220605212402840" style="zoom:80%;">
 
 <p>对于神经网络的损失函数，加入正则化项，直观上理解，正则化因子$\lambda$设置的足够大的情况下，为了使代价函数最小化，权重矩阵$W$就会被设置为接近于0的值。则相当于消除了很多神经元的影响，那么图中的大的神经网络就会变成一个较小的网络。当然上面这种解释是一种直观上的理解，但是实际上隐藏层的神经元依然存在，但是他们的影响变小了，便不会导致过拟合。<br>$$<br>J(w^{[1]},b^{[1]},…,w^{[L]},b^{[L]})=\dfrac{1}{m}\sum ^{m}<em>{i=1}l(\widehat{y}^{(i)},y^{(i)})+\dfrac{\lambda}{2m}\sum ^{L}</em>{l=1}||w^{[l]}||_F^2<br>$$<br>下面给出数学解释。假设神经元中使用的激活函数为$g(z)=tanh(z)$，在加入正则化项后：当$\lambda$增大，导致$W^{[l]}$减小，$Z^{[l]}=W^{[l]}a^{[l-1]}+b^{[l]}$便会减小，由上图可知，在$z$较小的区域里，$tanh(z)$函数近似线性，所以每层的函数就近似线性函数，整个网络就成为一个简单的近似线性的网络，从而不会发生过拟合。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="C:\Users\郑旭然\AppData\Roaming\Typora\typora-user-images\image-20210901172834971.png" alt="image-20210901172834971" style="zoom:75%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052124094.png" alt="image-20220605212420055" style="zoom:80%;">
 
 <h4 id="1-6-Dropout-正则化（Dropout-Regularization）"><a href="#1-6-Dropout-正则化（Dropout-Regularization）" class="headerlink" title="1.6 Dropout 正则化（Dropout Regularization）"></a>1.6 Dropout 正则化（Dropout Regularization）</h4><p><strong>Dropout（随机失活）</strong>就是在神经网络的Dropout层，为每个神经元结点设置一个随机消除的概率，对于保留下来的神经元，我们得到一个节点较少，规模较小的网络进行训练。如下图所示。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdn.net/20170928214708004?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvS29hbGFfVHJlZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="还在路上，稍等..." style="zoom:67%;">
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/pandalandala/imgbed@main/posts/202206052124550.png" alt="image-20220605212455491" style="zoom:80%;">
 
 <p>实现Dropout的方法为<strong>反向随机失活（Inverted dropout）</strong>。</p>
 <p>首先要定义向量d，$d^{[3]}$表示一个三层的<strong>dropout</strong>向量：<code>d3 = np.random.rand(a3.shape[0],a3.shape[1])</code></p>
